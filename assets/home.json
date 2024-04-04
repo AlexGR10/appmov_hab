@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "imagen":"",
+      "nombre": "Juan Pérez",
+      "habilidad": [
+        "Programador (Python)",
+        "Entrenador de gym"
+      ],
+      "pais": "México",
+      "estado": "Jalisco",
+      "idiomas": [
+        "Español",
+        "Inglés"
+      ],
+      "correo": "juan@example.com",
+      "video":"https://www.youtube.com/watch?v=AgFeZr5ptV8",
+      "numero": "+52 123 456 7890"
+    },
+    {
+      "id": 2,
+      "imagen":"",
+      "nombre": "Maria Garcia",
+      "habilidad": [
+        "Programador (Java)",
+        "Pintor"
+      ],
+      "pais": "España",
+      "estado": "Madrid",
+      "idiomas": [
+        "Español",
+        "Inglés"
+      ],
+      "correo": "maria@example.com",
+      "video":"https://www.youtube.com/watch?v=lPVBrRd9wCo",
+      "numero": "+34 987 654 3210"
+    },
+    {
+      "id": 3,
+      "imagen":"",
+      "nombre": "David Smith",
+      "habilidad": [
+        "Programador (JavaScript)",
+        "Gimnasta"
+      ],
+      "pais": "Estados Unidos",
+      "estado": "California",
+      "idiomas": [
+        "Inglés",
+        "Francés"
+      ],
+      "correo": "david@example.com",
+      "video":"https://www.youtube.com/watch?v=LfmrHTdXgK4",
+      "numero": "+1 234 567 8901"
+    },
+    {
+      "id": 4,
+      "imagen":"",
+      "nombre": "Sophie Johnson",
+      "habilidad": [
+        "Entrenador de gym",
+        "Pintor"
+      ],
+      "pais": "Reino Unido",
+      "estado": "Londres",
+      "idiomas": [
+        "Inglés",
+        "Alemán"
+      ],
+      "correo": "sophie@example.com",
+      "video":"https://www.youtube.com/watch?v=1w7OgIMMRc4",
+      "numero": "+44 1234 567890"
+    },
+    {
+      "id": 5,
+      "imagen":"",
+      "nombre": "Anna Müller",
+      "habilidad": [
+        "Pintor",
+        "Entrenador de gym"
+      ],
+      "pais": "Alemania",
+      "estado": "Berlín",
+      "idiomas": [
+        "Alemán",
+        "Inglés"
+      ],
+      "correo": "anna@example.com",
+      "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "numero": "+49 9876 543210"
+    },
+    {
+      "id": 6,
+      "imagen":"",
+      "nombre": "Lucas Fernández",
+      "habilidad": [
+        "Programador (C++)",
+        "Gimnasta"
+      ],
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "idiomas": [
+        "Español",
+        "Portugués"
+      ],
+      "correo": "lucas@example.com",
+      "video":"https://www.youtube.com/watch?v=flm4xcOyiCo",
+      "numero": "+54 123 456 7890"
+    },
+    {
+      "id": 7,
+      "imagen":"",
+      "nombre": "Sophia Rossi",
+      "habilidad": [
+        "Programador (Ruby)",
+        "Entrenador de gym"
+      ],
+      "pais": "Italia",
+      "estado": "Roma",
+      "idiomas": [
+        "Italiano",
+        "Inglés"
+      ],
+      "correo": "sophia@example.com",
+      "video":"https://www.youtube.com/watch?v=YSB8C7wEvLQ",
+      "numero": "+39 1234 567890"
+    },
+    {
+      "id": 8,
+      "imagen":"",
+      "nombre": "Mohamed Ali",
+      "habilidad": [
+        "Programador (PHP)",
+        "Gimnasta"
+      ],
+      "pais": "Egipto",
+      "estado": "El Cairo",
+      "idiomas": [
+        "Árabe",
+        "Inglés"
+      ],
+      "correo": "mohamed@example.com",
+      "video":"https://www.youtube.com/watch?v=IPXIgEAGe4U",
+      "numero": "+20 123 456 7890"
+    },
+    {
+      "id": 9,
+      "imagen":"",
+      "nombre": "Sofia González",
+      "habilidad": [
+        "Programador (Swift)",
+        "Pintor"
+      ],
+      "pais": "Argentina",
+      "estado": "Córdoba",
+      "idiomas": [
+        "Español",
+        "Inglés"
+      ],
+      "correo": "sofia@example.com",
+      "video":"https://www.youtube.com/watch?v=pBkHHoOIIn8",
+      "numero": "+54 987 654 3210"
+    },
+    {
+      "id": 10,
+      "imagen":"",
+      "nombre": "Ahmed Hassan",
+      "habilidad": [
+        "Programador (C#)",
+        "Entrenador de gym"
+      ],
+      "pais": "Egipto",
+      "estado": "Alejandría",
+      "idiomas": [
+        "Árabe",
+        "Inglés"
+      ],
+      "correo": "ahmed@example.com",
+      "video":"https://www.youtube.com/watch?v=J---aiyznGQ",
+      "numero": "+20 987 654 3210"
+    }
+  ]
+}

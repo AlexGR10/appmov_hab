@@ -1,0 +1,74 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "user": "John Doe",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¿Qué tal, chicos?",
+            "time": "Today 10:00 AM"
+        },
+        {
+            "id": 2,
+            "user": "Alice Smith",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¡Buenos días a todos!",
+            "time": "Yesterday 8:30 AM"
+        },
+        {
+            "id": 3,
+            "user": "Michael Johnson",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "Hey, ¿qué están haciendo?",
+            "time": "Nov 25"
+        },
+        {
+            "id": 4,
+            "user": "Emma Brown",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¡Hola amiguitos!",
+            "time": "Nov 20"
+        },
+        {
+            "id": 5,
+            "user": "David Williams",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¿Cómo están, gente?",
+            "time": "Nov 15"
+        },
+        {
+            "id": 6,
+            "user": "Olivia Garcia",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¡Qué onda!",
+            "time": "Nov 10"
+        },
+        {
+            "id": 7,
+            "user": "Daniel Martinez",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¿Alguien quiere un café?",
+            "time": "Nov 5"
+        },
+        {
+            "id": 8,
+            "user": "Sophia Hernandez",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¡Hola, amigos!",
+            "time": "Oct 31"
+        },
+        {
+            "id": 9,
+            "user": "Alexander Lopez",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¡Qué tal, gente!",
+            "time": "Oct 25"
+        },
+        {
+            "id": 10,
+            "user": "Mia Perez",
+            "image": "https://raw.githubusercontent.com/marrrx/Imagenes/main/images/3.jpeg",
+            "message": "¿Qué hay de nuevo?",
+            "time": "Oct 20"
+        }
+    ]
+}
