@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:proyect_example/widgets/user_details_reproductor.dart';
 
 class UserDetails extends StatelessWidget {
   final Map<String, dynamic> user;
@@ -87,7 +86,6 @@ class UserDetails extends StatelessWidget {
               Text('Correo: ${user['correo']}'),
               const SizedBox(height: 8),
               Text('Número: ${user['numero']}'),
-              VideoPlayerWidget(videoUrl: user['video']),
             ],
           ),
         ),
