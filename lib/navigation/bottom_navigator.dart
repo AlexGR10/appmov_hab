@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:proyect_example/navigation/home_page.dart';
-import 'package:proyect_example/navigation/index_page.dart';
 import 'package:proyect_example/navigation/messages_page.dart';
+import 'package:proyect_example/navigation/config_user_page.dart';
 
 class BottomNavigator extends StatefulWidget {
-  
   const BottomNavigator({super.key});
 
   @override
@@ -25,48 +24,41 @@ class NavBar extends State<BottomNavigator> {
           });
         },
         destinations: const <Widget>[
-
           NavigationDestination(
             icon: Icon(
               Icons.home,
               size: 30.0,
             ),
-            label: 'Home',
-            
+            label: 'Inicio',
           ),
-           NavigationDestination(
-            icon: Icon(
-              Icons.airplay,
-              size: 30.0,
-            ),
-            label: 'Index',
-            
-          ),
-           NavigationDestination(
+          NavigationDestination(
             icon: Icon(
               Icons.messenger_sharp,
               size: 30.0,
             ),
-            label: 'Messages',
-            
+            label: 'Mensajes',
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.settings,
+              size: 30.0,
+            ),
+            label: 'Configuracion',
           )
-
-
-
         ],
       ),
       body: _buildBody(currentPageIndex),
     );
-    
   }
-    Widget _buildBody(int index) {
+
+  Widget _buildBody(int index) {
     switch (index) {
       case 0:
         return const HomePage(); // Página de inicio, puedes reemplazar esto con el contenido de la página de inicio
       case 1:
-        return const Index(); // Página adicional, muestra la página OtraPagina
+        return const MessagesPage(); // Página adicional, muestra la página OtraPagina
       default:
-        return const  MessagesPage(); // Por defecto, muestra un contenedor vacío
+        return const ConfigUser(); // Por defecto, muestra un contenedor vacío
     }
   }
 }

@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
           .map((item) => {
                 "usuario": item["usuario"],
                 "password": item["password"],
-                // Aquí puedes agregar más datos del usuario si los necesitas
+                "id": item["id"],
               })
           .toList();
     });

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         '/createAccount': (context) => CreateAccountPage(),
         '/bottomNavigator': (context) => const BottomNavigator(),
       },
-      initialRoute: '/login',
+      initialRoute: '/',
     );
   }
 }
@@ -41,7 +41,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  bool _isAnimationEnabled = false;
+  bool _isAnimationEnabled = true;
 
   @override
   void initState() {
