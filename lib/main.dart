@@ -1,26 +1,103 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:proyect_example/screens/login_page.dart';
+import 'package:proyect_example/widgets/create_account_page.dart';
 import 'package:proyect_example/navigation/bottom_navigator.dart';
-
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Habilidades',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // ignore: prefer_const_constructors
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 255, 140, 0)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 236, 135, 19),
+        ),
         useMaterial3: true,
       ),
-      home: const BottomNavigator(),
+      routes: {
+        '/': (context) => const WelcomePage(), // Página de bienvenida
+        '/login': (context) => LoginPage(), // Página de inicio de sesión
+        '/createAccount': (context) =>
+            CreateAccountPage(), // Página de creación de cuenta
+        '/bottomNavigator': (context) =>
+            const BottomNavigator(), // BottomNavigator
+      },
+      initialRoute: '/', // Ruta inicial
+    );
+  }
+}
+
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
+
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          transitionDuration: const Duration(milliseconds: 900),
+          transitionsBuilder: (BuildContext context,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+              Widget child) {
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0.0, 1.0), // Empieza desde abajo
+                end: Offset.zero,
+              ).animate(animation),
+              child: child,
+            );
+          },
+          pageBuilder: (BuildContext context, Animation<double> animation,
+              Animation<double> secondaryAnimation) {
+            return LoginPage();
+          },
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(255, 236, 135, 19), // Fondo naranja
+          borderRadius: BorderRadius.only(
+            bottomLeft:
+                Radius.circular(200.0), // Borde inferior derecho redondeado
+          ),
+        ),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'SkillScape',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

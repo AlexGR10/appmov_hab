@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "usuario": "juanito123",
+      "email": "juan@example.com",
+      "edad": 30,
+      "idioma": "español",
+      "pais": "México",
+      "estado": "Ciudad de México",
+      "grado": "Licenciatura",
+      "habilidades": ["Programación", "Diseño gráfico", "Inglés"],
+      "password": "juan123", 
+      "id": 1 
+    },
+    {
+      "nombre": "María",
+      "apellido": "González",
+      "usuario": "mariag",
+      "email": "maria@example.com",
+      "edad": 25,
+      "idioma": "español",
+      "pais": "España",
+      "estado": "Madrid",
+      "grado": "Maestría",
+      "habilidades": ["Marketing digital", "Redacción", "Francés"],
+      "password": "maria123", 
+      "id": 2 
+    },
+    {
+      "nombre": "John",
+      "apellido": "Smith",
+      "usuario": "jsmith",
+      "email": "john@example.com",
+      "edad": 35,
+      "idioma": "inglés",
+      "pais": "Estados Unidos",
+      "estado": "California",
+      "grado": "Bachillerato",
+      "habilidades": ["Desarrollo web", "Gestión de proyectos", "Español"],
+      "password": "john123", 
+      "id": 3
+    },
+    {
+      "nombre": "Luisa",
+      "apellido": "Martínez",
+      "usuario": "luisam",
+      "email": "luisa@example.com",
+      "edad": 28,
+      "idioma": "español",
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "grado": "Licenciatura",
+      "habilidades": ["Diseño UX/UI", "Frontend development", "Portugués"],
+      "password": "luisa123", 
+      "id": 4 
+    },
+    {
+      "nombre": "Emily",
+      "apellido": "Brown",
+      "usuario": "emilyb",
+      "email": "emily@example.com",
+      "edad": 32,
+      "idioma": "inglés",
+      "pais": "Reino Unido",
+      "estado": "Londres",
+      "grado": "Licenciatura",
+      "habilidades": ["Redes sociales", "Fotografía", "Alemán"],
+      "password": "emily123", 
+      "id": 5 
+    }
+  ]
+}
