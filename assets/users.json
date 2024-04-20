@@ -69,6 +69,76 @@
       "habilidades": ["Redes sociales", "Fotografía", "Alemán"],
       "password": "emily123", 
       "id": 5 
+    },
+    {
+      "nombre": "Sofía",
+      "apellido": "Rodríguez",
+      "usuario": "sofiar",
+      "email": "sofia@example.com",
+      "edad": 29,
+      "idioma": "español",
+      "pais": "Colombia",
+      "estado": "Bogotá",
+      "grado": "Maestría",
+      "habilidades": ["Desarrollo móvil", "Inteligencia artificial", "Inglés"],
+      "password": "sofia123",
+      "id": 6
+    },
+    {
+      "nombre": "David",
+      "apellido": "López",
+      "usuario": "davidl",
+      "email": "david@example.com",
+      "edad": 31,
+      "idioma": "español",
+      "pais": "México",
+      "estado": "Guadalajara",
+      "grado": "Licenciatura",
+      "habilidades": ["Diseño gráfico", "Marketing digital", "Francés"],
+      "password": "david123",
+      "id": 7
+    },
+    {
+      "nombre": "Emma",
+      "apellido": "García",
+      "usuario": "emmag",
+      "email": "emma@example.com",
+      "edad": 26,
+      "idioma": "inglés",
+      "pais": "Estados Unidos",
+      "estado": "Nueva York",
+      "grado": "Doctorado",
+      "habilidades": ["Investigación científica", "Programación", "Español"],
+      "password": "emma123",
+      "id": 8
+    },
+    {
+      "nombre": "Alejandro",
+      "apellido": "Hernández",
+      "usuario": "alejandroh",
+      "email": "alejandro@example.com",
+      "edad": 33,
+      "idioma": "español",
+      "pais": "España",
+      "estado": "Barcelona",
+      "grado": "Licenciatura",
+      "habilidades": ["Desarrollo web", "Gestión de proyectos", "Inglés"],
+      "password": "alejandro123",
+      "id": 9
+    },
+    {
+      "nombre": "Isabella",
+      "apellido": "Martinez",
+      "usuario": "isabellam",
+      "email": "isabella@example.com",
+      "edad": 27,
+      "idioma": "español",
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "grado": "Licenciatura",
+      "habilidades": ["Diseño UX/UI", "Frontend development", "Portugués"],
+      "password": "isabella123",
+      "id": 10
     }
   ]
 }

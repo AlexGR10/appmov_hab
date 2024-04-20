@@ -23,14 +23,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const WelcomePage(), // Página de bienvenida
-        '/login': (context) => LoginPage(), // Página de inicio de sesión
-        '/createAccount': (context) =>
-            CreateAccountPage(), // Página de creación de cuenta
-        '/bottomNavigator': (context) =>
-            const BottomNavigator(), // BottomNavigator
+        '/': (context) => const WelcomePage(),
+        '/login': (context) => LoginPage(),
+        '/createAccount': (context) => CreateAccountPage(),
+        '/bottomNavigator': (context) => const BottomNavigator(),
       },
-      initialRoute: '/', // Ruta inicial
+      initialRoute: '/login',
     );
   }
 }
@@ -43,33 +41,37 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  bool _isAnimationEnabled = false;
+
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        PageRouteBuilder(
-          transitionDuration: const Duration(milliseconds: 900),
-          transitionsBuilder: (BuildContext context,
-              Animation<double> animation,
-              Animation<double> secondaryAnimation,
-              Widget child) {
-            return SlideTransition(
-              position: Tween<Offset>(
-                begin: const Offset(0.0, 1.0), // Empieza desde abajo
-                end: Offset.zero,
-              ).animate(animation),
-              child: child,
-            );
-          },
-          pageBuilder: (BuildContext context, Animation<double> animation,
-              Animation<double> secondaryAnimation) {
-            return LoginPage();
-          },
-        ),
-      );
-    });
+    if (_isAnimationEnabled) {
+      Timer(const Duration(seconds: 2), () {
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            transitionDuration: const Duration(milliseconds: 900),
+            transitionsBuilder: (BuildContext context,
+                Animation<double> animation,
+                Animation<double> secondaryAnimation,
+                Widget child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                  begin: const Offset(0.0, 1.0), // Empieza desde abajo
+                  end: Offset.zero,
+                ).animate(animation),
+                child: child,
+              );
+            },
+            pageBuilder: (BuildContext context, Animation<double> animation,
+                Animation<double> secondaryAnimation) {
+              return LoginPage();
+            },
+          ),
+        );
+      });
+    }
   }
 
   @override

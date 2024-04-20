@@ -10,29 +10,37 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usuarioController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  List<dynamic> _users = [];
+  List<Map<String, dynamic>> _users = [];
 
   @override
   void initState() {
     super.initState();
-    loadUsers();
+    loadUsers(); // Llama a loadUsers() al iniciar la página
   }
 
   Future<void> loadUsers() async {
-    String usersJson = await rootBundle.loadString('assets/users.json');
+    final String usersJson = await rootBundle.loadString('assets/users.json');
+    final List<dynamic> data = jsonDecode(usersJson)["users"];
+
     setState(() {
-      _users = jsonDecode(usersJson)['users'];
+      _users = data
+          .map((item) => {
+                "usuario": item["usuario"],
+                "password": item["password"],
+                // Aquí puedes agregar más datos del usuario si los necesitas
+              })
+          .toList();
     });
   }
 
   void _signInWithEmailPassword(BuildContext context) {
-    String email = _emailController.text;
-    String password = _passwordController.text;
+    String usuario = _usuarioController.text.trim();
+    String password = _passwordController.text.trim();
 
-    bool isAuthenticated = _users
-        .any((user) => user['email'] == email && user['pas sword'] == password);
+    bool isAuthenticated = _users.any(
+        (user) => user['usuario'] == usuario && user['password'] == password);
 
     if (isAuthenticated) {
       Navigator.pushReplacementNamed(context, '/bottomNavigator');
@@ -42,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context) {
           return AlertDialog(
             title: Text('Error de inicio de sesión'),
-            content: Text('Correo electrónico o contraseña incorrectos.'),
+            content: Text('Usuario o contraseña incorrectos.'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -64,15 +72,15 @@ class _LoginPageState extends State<LoginPage> {
         preferredSize:
             Size.fromHeight(MediaQuery.of(context).size.height * 0.3),
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Color.fromARGB(255, 236, 135, 19),
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(100),
             ),
           ),
-          child: const Center(
+          child: Center(
             child: Text(
-              'Iniciar Sesión',
+              "Logo",
               style: TextStyle(
                 fontSize: 40,
                 color: Colors.white,
@@ -88,29 +96,39 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
-                controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'Correo electrónico',
+                controller: _usuarioController,
+                decoration: InputDecoration(
+                  labelText: 'Usuario',
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: _passwordController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Contraseña',
                 ),
                 obscureText: true,
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => _signInWithEmailPassword(context),
-              child: const Text('Iniciar sesión'),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  Color.fromARGB(255, 236, 135, 19),
+                ), // Color de fondo del botón
+              ),
+              child: Text(
+                'Iniciar sesión',
+                style: TextStyle(
+                  color: Colors.white, // Color del texto del botón
+                ),
+              ),
             ),
-            const SizedBox(height: 50),
+            SizedBox(height: 50),
             TextButton(
               onPressed: () {
                 Navigator.push(
@@ -120,9 +138,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 );
               },
-              child: const Text('Crear cuenta'),
+              child: Text('Crear cuenta'),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             TextButton(
               onPressed: () {
                 Navigator.push(
@@ -132,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 );
               },
-              child: const Text('¿Olvidaste tu contraseña?'),
+              child: Text('¿Olvidaste tu contraseña?'),
             ),
           ],
         ),
