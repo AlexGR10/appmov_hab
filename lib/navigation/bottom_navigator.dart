@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:proyect_example/navigation/home_page.dart';
 import 'package:proyect_example/navigation/messages_page.dart';
-import 'package:proyect_example/navigation/config_user_page.dart';
+import 'package:proyect_example/navigation/ProfileUserPage.dart';
 
 class BottomNavigator extends StatefulWidget {
-  const BottomNavigator({super.key});
+  final int id_receive;
+
+  const BottomNavigator({Key? key, required this.id_receive}) : super(key: key);
 
   @override
   State<BottomNavigator> createState() => NavBar();
 }
 
 class NavBar extends State<BottomNavigator> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +56,11 @@ class NavBar extends State<BottomNavigator> {
   Widget _buildBody(int index) {
     switch (index) {
       case 0:
-        return const HomePage(); // Página de inicio, puedes reemplazar esto con el contenido de la página de inicio
+        return const HomePage();
       case 1:
-        return const MessagesPage(); // Página adicional, muestra la página OtraPagina
+        return const MessagesPage();
       default:
-        return const ConfigUser(); // Por defecto, muestra un contenedor vacío
+        return ProfileUserPage(userId: widget.id_receive);
     }
   }
 }

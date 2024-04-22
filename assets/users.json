@@ -1,6 +1,21 @@
 {
   "users": [
     {
+      "id": 0,
+      "nombre": "Null",
+      "apellido": "Null",
+      "usuario": "Null",
+      "email": "Null",
+      "edad": 0,
+      "idioma": "Null",
+      "pais": "Null",
+      "estado": "Null",
+      "grado": "Null",
+      "habilidades": ["Null"],
+      "intereses": ["Null"],
+      "password": "Null"
+    },
+    {
       "id": 1,
       "nombre": "Juan",
       "apellido": "Pérez",

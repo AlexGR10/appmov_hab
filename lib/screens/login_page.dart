@@ -5,6 +5,11 @@ import '../widgets/create_account_page.dart';
 import '../widgets/forgot_password_page.dart';
 
 class LoginPage extends StatefulWidget {
+  final void Function(int)
+      onIdReceive; // Define la función de devolución de llamada
+
+  const LoginPage({Key? key, required this.onIdReceive}) : super(key: key);
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -13,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _usuarioController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   List<Map<String, dynamic>> _users = [];
+  int id_inicial = 1;
 
   @override
   void initState() {
@@ -39,24 +45,37 @@ class _LoginPageState extends State<LoginPage> {
     String usuario = _usuarioController.text.trim();
     String password = _passwordController.text.trim();
 
-    bool isAuthenticated = _users.any(
-        (user) => user['usuario'] == usuario && user['password'] == password);
+    // Busca el usuario autenticado en la lista _users
+    Map<String, dynamic>? authenticatedUser = _users.firstWhere(
+      (user) => user['usuario'] == usuario && user['password'] == password,
+    );
 
-    if (isAuthenticated) {
-      Navigator.pushReplacementNamed(context, '/bottomNavigator');
+    if (authenticatedUser != null) {
+      // Extrae el ID del usuario autenticado
+      int userId = authenticatedUser['id'];
+
+      // Llama a la función de devolución de llamada para pasar el ID
+      widget.onIdReceive(userId);
+
+      // Navega a BottomNavigator
+      Navigator.pushReplacementNamed(
+        context,
+        '/bottomNavigator',
+      );
     } else {
+      // Muestra un diálogo de error si la autenticación falla
       showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Error de inicio de sesión'),
-            content: Text('Usuario o contraseña incorrectos.'),
+            title: const Text('Error de inicio de sesión'),
+            content: const Text('Usuario o contraseña incorrectos.'),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('OK'),
+                child: const Text('OK'),
               ),
             ],
           );
@@ -72,13 +91,13 @@ class _LoginPageState extends State<LoginPage> {
         preferredSize:
             Size.fromHeight(MediaQuery.of(context).size.height * 0.3),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color.fromARGB(255, 236, 135, 19),
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(100),
             ),
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               "Logo",
               style: TextStyle(
@@ -97,38 +116,39 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: _usuarioController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Usuario',
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Contraseña',
                 ),
                 obscureText: true,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => _signInWithEmailPassword(context),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
-                  Color.fromARGB(255, 236, 135, 19),
+                  const Color.fromARGB(255, 236, 135, 19),
                 ), // Color de fondo del botón
               ),
-              child: Text(
+              child: const Text(
                 'Iniciar sesión',
                 style: TextStyle(
+                  fontSize: 20.0,
                   color: Colors.white, // Color del texto del botón
                 ),
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             TextButton(
               onPressed: () {
                 Navigator.push(
@@ -138,9 +158,14 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 );
               },
-              child: Text('Crear cuenta'),
+              child: const Text(
+                'Crear cuenta',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: () {
                 Navigator.push(
@@ -150,7 +175,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 );
               },
-              child: Text('¿Olvidaste tu contraseña?'),
+              child: const Text(
+                '¿Olvidaste tu contraseña?',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
             ),
           ],
         ),

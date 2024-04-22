@@ -5,11 +5,18 @@ import 'package:proyect_example/widgets/create_account_page.dart';
 import 'package:proyect_example/navigation/bottom_navigator.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int id_receive = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,59 +30,30 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const WelcomePage(),
-        '/login': (context) => LoginPage(),
+        '/login': (context) => LoginPage(onIdReceive: (id) {
+              setState(() {
+                id_receive = id;
+              });
+            }),
         '/createAccount': (context) => CreateAccountPage(),
-        '/bottomNavigator': (context) => const BottomNavigator(),
+        '/bottomNavigator': (context) =>
+            BottomNavigator(id_receive: id_receive),
+        '/welcome': (context) => const WelcomePage(),
       },
-      initialRoute: '/',
+      initialRoute: '/welcome',
     );
   }
 }
 
-class WelcomePage extends StatefulWidget {
+class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
 
   @override
-  _WelcomePageState createState() => _WelcomePageState();
-}
-
-class _WelcomePageState extends State<WelcomePage> {
-  bool _isAnimationEnabled = true;
-
-  @override
-  void initState() {
-    super.initState();
-    if (_isAnimationEnabled) {
-      Timer(const Duration(seconds: 2), () {
-        Navigator.pushReplacement(
-          context,
-          PageRouteBuilder(
-            transitionDuration: const Duration(milliseconds: 900),
-            transitionsBuilder: (BuildContext context,
-                Animation<double> animation,
-                Animation<double> secondaryAnimation,
-                Widget child) {
-              return SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0.0, 1.0), // Empieza desde abajo
-                  end: Offset.zero,
-                ).animate(animation),
-                child: child,
-              );
-            },
-            pageBuilder: (BuildContext context, Animation<double> animation,
-                Animation<double> secondaryAnimation) {
-              return LoginPage();
-            },
-          ),
-        );
-      });
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, '/login');
+    });
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
