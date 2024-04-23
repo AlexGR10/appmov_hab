@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class UserDetails extends StatelessWidget {
   final Map<String, dynamic> user;
 
-  const UserDetails({super.key, required this.user});
+  const UserDetails({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class UserDetails extends StatelessWidget {
                 height: 120,
                 width: 120,
                 child: CircleAvatar(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color.fromARGB(255, 236, 135, 19),
                   child: Icon(
                     Icons.person,
                     color: Colors.white,
@@ -29,7 +29,7 @@ class UserDetails extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                user['nombre'],
+                '${user['nombre']} ${user['apellido']}',
                 style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -44,12 +44,45 @@ class UserDetails extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
-                (user['habilidad'] as List).join(', '),
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey[600],
-                ),
+              Column(
+                children:
+                    (user['habilidades'] as List).map<Widget>((habilidad) {
+                  return ListTile(
+                    title: Text(
+                      habilidad['nombre'],
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      habilidad['descripcion'],
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    trailing: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Calificación: ${habilidad['calificacion']}',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        Text(
+                          'Cantidad de Calificaciones: ${habilidad['cantCalif']}',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
               ),
               const SizedBox(height: 16),
               Row(
@@ -83,9 +116,7 @@ class UserDetails extends StatelessWidget {
               const SizedBox(height: 16),
               Text('Idiomas: ${(user['idiomas'] as List).join(', ')}'),
               const SizedBox(height: 8),
-              Text('Correo: ${user['correo']}'),
-              const SizedBox(height: 8),
-              Text('Número: ${user['numero']}'),
+              Text('Correo: ${user['email']}'),
             ],
           ),
         ),
@@ -93,5 +124,3 @@ class UserDetails extends StatelessWidget {
     );
   }
 }
-
-

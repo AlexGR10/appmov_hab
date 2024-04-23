@@ -3,16 +3,21 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:proyect_example/screens/home/users_details.dart';
+import 'package:proyect_example/widgets/Home/category_interest_user.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final int userId; // Agregar el parámetro userId
+
+  const HomePage({Key? key, required this.userId}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Map<String, dynamic>> _users = [];
+  List<String> _userInterests = [];
+  String _activeUserName =
+      ''; // Variable para almacenar el nombre del usuario activo
 
   @override
   void initState() {
@@ -21,22 +26,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/home.json');
+    final String response = await rootBundle.loadString('assets/users.json');
     final List<dynamic> data = json.decode(response)["users"];
 
+    // Obtener el nombre del usuario activo
+    final user = data.firstWhere((user) => user['id'] == widget.userId,
+        orElse: () => {});
+    _activeUserName = user['nombre'] ?? '';
+
     setState(() {
-      _users = data
-          .map((item) => {
-                "nombre": item["nombre"],
-                "habilidad": item["habilidad"],
-                "pais": item["pais"],
-                "estado": item["estado"],
-                "idiomas": item["idiomas"],
-                "correo": item["correo"],
-                "numero": item["numero"],
-                "video":item["video"],
-              })
-          .toList();
+      // Obtener los intereses del usuario activo
+      _userInterests = List<String>.from(user['intereses'] ?? []);
     });
   }
 
@@ -44,72 +44,45 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: Color.fromARGB(255, 236, 135, 19),
+                width: 0.8,
+              ),
+            ),
+          ),
+          child: Row(
+            children: [
+              Text(
+                'Hola ',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              Text(
+                _activeUserName, // Mostrar el nombre del usuario activo
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 236, 135, 19),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: ListView.builder(
-        itemCount: _users.length,
+        itemCount: _userInterests.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => UserDetails(user: _users[index]),
-                  ),
-                );
-              },
-              child: Card(
-                elevation: 4, // Elevación para un efecto de sombra
-                margin: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 16), // Margen alrededor de la tarjeta
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                      16), // Bordes redondeados para la tarjeta
-                ),
-                child: ListTile(
-                  contentPadding:
-                      const EdgeInsets.all(16), // Espaciado interno del ListTile
-                  leading: const CircleAvatar(
-                    backgroundColor: Colors.blue, // Color de fondo del avatar
-                    child: Icon(
-                      Icons.person, // Icono de perfil
-                      color: Colors.white, // Color del icono
-                    ),
-                  ),
-                  title: Text(
-                    _users[index]['nombre'],
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    (_users[index]['habilidad'] as List).join(', '),
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  trailing: const Icon(
-                    Icons
-                        .arrow_forward_ios, // Icono de flecha para indicar que se puede navegar
-                    size: 20,
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            UserDetails(user: _users[index]),
-                      ),
-                    );
-                  },
-                ),
-              ));
+          final interest = _userInterests[index];
+          return CategoryInterestUser(
+              interest: interest, userId: widget.userId);
         },
       ),
     );
   }
 }
-

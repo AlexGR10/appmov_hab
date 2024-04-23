@@ -7,18 +7,21 @@
       "usuario": "Null",
       "email": "Null",
       "edad": 0,
-      "idioma": "Null",
+      "idiomas": ["Null"],
       "pais": "Null",
       "estado": "Null",
       "grado": "Null",
       "habilidades": [
         {
           "nombre": "Null",
-          "descripcion": "Null"
+          "descripcion": "Null",
+          "calificacion": 0,
+          "cantCalif": 0
         }
       ],
       "intereses": ["Null"],
-      "password": "Null"
+      "password": "Null",
+      "imagen": ""
     },
     {
       "id": 1,
@@ -27,26 +30,33 @@
       "usuario": "juanito123",
       "email": "juan@example.com",
       "edad": 30,
-      "idioma": "español",
+      "idiomas": ["español", "inglés"],
       "pais": "México",
       "estado": "Ciudad de México",
       "grado": "Licenciatura",
       "habilidades": [
         {
           "nombre": "Programación",
-          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc."
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 10,
+          "cantCalif": 3
         },
         {
           "nombre": "Diseño gráfico",
-          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc."
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 8,
+          "cantCalif": 20
         },
         {
           "nombre": "Inglés",
-          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla."
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7,
+          "cantCalif": 10
         }
       ],
       "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
-      "password": "juan123"
+      "password": "juan123",
+      "imagen": ""
     },
     {
       "id": 2,
@@ -55,26 +65,33 @@
       "usuario": "mariag",
       "email": "maria@example.com",
       "edad": 25,
-      "idioma": "español",
+      "idiomas": ["español", "inglés", "francés"],
       "pais": "España",
       "estado": "Madrid",
       "grado": "Maestría",
       "habilidades": [
         {
           "nombre": "Marketing digital",
-          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios."
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 10,
+          "cantCalif": 30
         },
         {
           "nombre": "Redacción",
-          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc."
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9.5,
+          "cantCalif": 27
         },
         {
           "nombre": "Francés",
-          "descripcion": "Competencia en el idioma francés, tanto en la escritura como en el habla."
+          "descripcion": "Competencia en el idioma francés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 40
         }
       ],
       "intereses": ["Desarrollo de aplicaciones móviles", "Diseño gráfico", "Fotografía"],
-      "password": "maria123"
+      "password": "maria123",
+      "imagen": ""
     },
     {
       "id": 3,
@@ -83,26 +100,33 @@
       "usuario": "jsmith",
       "email": "john@example.com",
       "edad": 35,
-      "idioma": "inglés",
+      "idiomas": ["inglés", "español"],
       "pais": "Estados Unidos",
       "estado": "California",
       "grado": "Bachillerato",
       "habilidades": [
         {
           "nombre": "Desarrollo web",
-          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc."
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 10,
+          "cantCalif": 20
         },
         {
           "nombre": "Gestión de proyectos",
-          "descripcion": "Planificación, ejecución y control de proyectos para lograr objetivos específicos."
+          "descripcion": "Planificación, ejecución y control de proyectos para lograr objetivos específicos.",
+          "calificacion": 0,
+          "cantCalif": 0
         },
         {
           "nombre": "Español",
-          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla."
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 0,
+          "cantCalif": 0
         }
       ],
       "intereses": ["Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos", "Inteligencia artificial"],
-      "password": "john123"
+      "password": "john123",
+      "imagen": ""
     },
     {
       "id": 4,
@@ -111,26 +135,33 @@
       "usuario": "luisam",
       "email": "luisa@example.com",
       "edad": 28,
-      "idioma": "español",
+      "idiomas": ["español", "portugués"],
       "pais": "Argentina",
       "estado": "Buenos Aires",
       "grado": "Licenciatura",
       "habilidades": [
         {
           "nombre": "Diseño UX/UI",
-          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario."
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario.",
+          "calificacion": 8.2,
+          "cantCalif": 36
         },
         {
           "nombre": "Frontend development",
-          "descripcion": "Desarrollo de la parte visual de sitios web y aplicaciones utilizando tecnologías como HTML, CSS, JavaScript, etc."
+          "descripcion": "Desarrollo de la parte visual de sitios web y aplicaciones utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 7.3,
+          "cantCalif": 67
         },
         {
           "nombre": "Portugués",
-          "descripcion": "Competencia en el idioma portugués, tanto en la escritura como en el habla."
+          "descripcion": "Competencia en el idioma portugués, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 4
         }
       ],
       "intereses": ["Diseño de interfaces", "Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos"],
-      "password": "luisa123"
+      "password": "luisa123",
+      "imagen": ""
     },
     {
       "id": 5,
@@ -139,26 +170,908 @@
       "usuario": "emilyb",
       "email": "emily@example.com",
       "edad": 32,
-      "idioma": "inglés",
+      "idiomas": ["inglés", "alemán"],
       "pais": "Reino Unido",
       "estado": "Londres",
       "grado": "Licenciatura",
       "habilidades": [
         {
           "nombre": "Redes sociales",
-          "descripcion": "Gestión de perfiles en redes sociales y creación de estrategias de contenido para aumentar la visibilidad y la participación."
+          "descripcion": "Gestión de perfiles en redes sociales y creación de estrategias de contenido para aumentar la visibilidad y la participación.",
+          "calificacion": 10,
+          "cantCalif": 30
         },
         {
           "nombre": "Fotografía",
-          "descripcion": "Captura de imágenes utilizando cámaras fotográficas profesionales y técnicas avanzadas de edición de imágenes."
+          "descripcion": "Captura de imágenes utilizando cámaras fotográficas profesionales y técnicas avanzadas de edición de imágenes.",
+          "calificacion": 10,
+          "cantCalif": 10
         },
         {
           "nombre": "Alemán",
-          "descripcion": "Competencia en el idioma alemán, tanto en la escritura como en el habla."
+          "descripcion": "Competencia en el idioma alemán, tanto en la escritura como en el habla.",
+          "calificacion": 0,
+          "cantCalif": 0
         }
       ],
       "intereses": ["Desarrollo web", "Marketing digital", "Desarrollo de aplicaciones móviles"],
-      "password": "emily123"
+      "password": "emily123",
+      "imagen": ""
+    },
+    {
+      "id": 6,
+      "nombre": "Alejandro",
+      "apellido": "Hernández",
+      "usuario": "alejandroh",
+      "email": "alejandro@example.com",
+      "edad": 27,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Guadalajara",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 9.5,
+          "cantCalif": 15
+        },
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 8,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7,
+          "cantCalif": 12
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Diseño UX/UI", "Marketing digital"],
+      "password": "alejandro123",
+      "imagen": ""
+    },
+    {
+      "id": 7,
+      "nombre": "Lucía",
+      "apellido": "Fernández",
+      "usuario": "luciaf",
+      "email": "lucia@example.com",
+      "edad": 29,
+      "idiomas": ["español", "francés"],
+      "pais": "España",
+      "estado": "Barcelona",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9,
+          "cantCalif": 20
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 8,
+          "cantCalif": 18
+        },
+        {
+          "nombre": "Francés",
+          "descripcion": "Competencia en el idioma francés, tanto en la escritura como en el habla.",
+          "calificacion": 8,
+          "cantCalif": 30
+        }
+      ],
+      "intereses": ["Diseño gráfico", "Fotografía", "Desarrollo de aplicaciones móviles"],
+      "password": "lucia123",
+      "imagen": ""
+    },
+    {
+      "id": 8,
+      "nombre": "James",
+      "apellido": "Johnson",
+      "usuario": "jamesj",
+      "email": "james@example.com",
+      "edad": 33,
+      "idiomas": ["inglés", "alemán"],
+      "pais": "Estados Unidos",
+      "estado": "Nueva York",
+      "grado": "Doctorado",
+      "habilidades": [
+        {
+          "nombre": "Inteligencia artificial",
+          "descripcion": "Desarrollo de sistemas y algoritmos que simulan la inteligencia humana.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Desarrollo de videojuegos",
+          "descripcion": "Creación de videojuegos utilizando diversas tecnologías y plataformas.",
+          "calificacion": 7.8,
+          "cantCalif": 60
+        },
+        {
+          "nombre": "Alemán",
+          "descripcion": "Competencia en el idioma alemán, tanto en la escritura como en el habla.",
+          "calificacion": 8,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo web", "Marketing digital", "Desarrollo de aplicaciones móviles"],
+      "password": "james123",
+      "imagen": ""
+    },
+    {
+      "id": 9,
+      "nombre": "Carolina",
+      "apellido": "Rodríguez",
+      "usuario": "carolinar",
+      "email": "carolina@example.com",
+      "edad": 28,
+      "idiomas": ["español", "inglés"],
+      "pais": "Colombia",
+      "estado": "Bogotá",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 9,
+          "cantCalif": 35
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 8.5,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7,
+          "cantCalif": 15
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Diseño UX/UI", "Redes sociales"],
+      "password": "carolina123",
+      "imagen": ""
+    },
+    {
+      "id": 10,
+      "nombre": "Daniel",
+      "apellido": "García",
+      "usuario": "danig",
+      "email": "daniel@example.com",
+      "edad": 31,
+      "idiomas": ["español", "portugués"],
+      "pais": "Brasil",
+      "estado": "Río de Janeiro",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8.2,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 8.8,
+          "cantCalif": 20
+        },
+        {
+          "nombre": "Portugués",
+          "descripcion": "Competencia en el idioma portugués, tanto en la escritura como en el habla.",
+          "calificacion": 9,
+          "cantCalif": 30
+        }
+      ],
+      "intereses": ["Marketing digital", "Desarrollo de aplicaciones móviles", "Fotografía"],
+      "password": "daniel123",
+      "imagen": ""
+    },
+    {
+      "id": 11,
+      "nombre": "Ana",
+      "apellido": "López",
+      "usuario": "anal",
+      "email": "ana@example.com",
+      "edad": 26,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Monterrey",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 9,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Diseño UX/UI",
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario.",
+          "calificacion": 8.5,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7.2,
+          "cantCalif": 18
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Desarrollo de videojuegos"],
+      "password": "ana123",
+      "imagen": ""
+    },
+    {
+      "id": 12,
+      "nombre": "Carlos",
+      "apellido": "Martínez",
+      "usuario": "carlosm",
+      "email": "carlos@example.com",
+      "edad": 29,
+      "idiomas": ["español", "francés"],
+      "pais": "Francia",
+      "estado": "París",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 8,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Francés",
+          "descripcion": "Competencia en el idioma francés, tanto en la escritura como en el habla.",
+          "calificacion": 9,
+          "cantCalif": 35
+        }
+      ],
+      "intereses": ["Diseño gráfico", "Fotografía", "Desarrollo de aplicaciones móviles"],
+      "password": "carlos123",
+      "imagen": ""
+    },
+    {
+      "id": 13,
+      "nombre": "Laura",
+      "apellido": "Pérez",
+      "usuario": "laurap",
+      "email": "laura@example.com",
+      "edad": 30,
+      "idiomas": ["español", "inglés"],
+      "pais": "España",
+      "estado": "Valencia",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8.7,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9.3,
+          "cantCalif": 22
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7.8,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "laura123",
+      "imagen": ""
+    },
+    {
+      "id": 14,
+      "nombre": "Pedro",
+      "apellido": "Gómez",
+      "usuario": "pedrog",
+      "email": "pedro@example.com",
+      "edad": 32,
+      "idiomas": ["español", "portugués"],
+      "pais": "Brasil",
+      "estado": "São Paulo",
+      "grado": "Doctorado",
+      "habilidades": [
+        {
+          "nombre": "Inteligencia artificial",
+          "descripcion": "Desarrollo de sistemas y algoritmos que simulan la inteligencia humana.",
+          "calificacion": 9,
+          "cantCalif": 35
+        },
+        {
+          "nombre": "Desarrollo de videojuegos",
+          "descripcion": "Creación de videojuegos utilizando diversas tecnologías y plataformas.",
+          "calificacion": 8,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Portugués",
+          "descripcion": "Competencia en el idioma portugués, tanto en la escritura como en el habla.",
+          "calificacion": 8.5,
+          "cantCalif": 25
+        }
+      ],
+      "intereses": ["Desarrollo web", "Marketing digital", "Desarrollo de aplicaciones móviles"],
+      "password": "pedro123",
+      "imagen": ""
+    },
+    {
+      "id": 15,
+      "nombre": "María",
+      "apellido": "Sánchez",
+      "usuario": "marias",
+      "email": "maria@example.com",
+      "edad": 27,
+      "idiomas": ["español", "inglés"],
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 8.5,
+          "cantCalif": 20
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 9,
+          "cantCalif": 18
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7,
+          "cantCalif": 15
+        }
+      ],
+      "intereses": ["Diseño UX/UI", "Fotografía", "Redes sociales"],
+      "password": "maria123",
+      "imagen": ""
+    },
+    {
+      "id": 16,
+      "nombre": "Elena",
+      "apellido": "Hernández",
+      "usuario": "elenah",
+      "email": "elena@example.com",
+      "edad": 31,
+      "idiomas": ["español", "inglés"],
+      "pais": "España",
+      "estado": "Barcelona",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8.7,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 9.3,
+          "cantCalif": 22
+        },
+        {
+          "nombre": "Francés",
+          "descripcion": "Competencia en el idioma francés, tanto en la escritura como en el habla.",
+          "calificacion": 7.8,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "elena123",
+      "imagen": ""
+    },
+    {
+      "id": 17,
+      "nombre": "Gabriel",
+      "apellido": "Rodríguez",
+      "usuario": "gabrielr",
+      "email": "gabriel@example.com",
+      "edad": 29,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Guadalajara",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 9,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 8.5,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 7.2,
+          "cantCalif": 18
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Desarrollo de videojuegos"],
+      "password": "gabriel123",
+      "imagen": ""
+    },
+    {
+      "id": 18,
+      "nombre": "Lucía",
+      "apellido": "García",
+      "usuario": "luciag",
+      "email": "lucia@example.com",
+      "edad": 27,
+      "idiomas": ["español", "inglés"],
+      "pais": "Argentina",
+      "estado": "Córdoba",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8.7,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9.3,
+          "cantCalif": 22
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 7.8,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "lucia123",
+      "imagen": ""
+    },
+    {
+      "id": 19,
+      "nombre": "Diego",
+      "apellido": "Martínez",
+      "usuario": "diegom",
+      "email": "diego@example.com",
+      "edad": 28,
+      "idiomas": ["español", "inglés"],
+      "pais": "España",
+      "estado": "Sevilla",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Diseño UX/UI",
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario.",
+          "calificacion": 8.2,
+          "cantCalif": 36
+        },
+        {
+          "nombre": "Frontend development",
+          "descripcion": "Desarrollo de la parte visual de sitios web y aplicaciones utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 7.3,
+          "cantCalif": 67
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 4
+        }
+      ],
+      "intereses": ["Diseño de interfaces", "Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos"],
+      "password": "diego123",
+      "imagen": ""
+    },
+    {
+      "id": 20,
+      "nombre": "Sara",
+      "apellido": "Fernández",
+      "usuario": "saraf",
+      "email": "sara@example.com",
+      "edad": 30,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Monterrey",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 8,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 18
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "sara123",
+      "imagen": ""
+    },
+    {
+      "id": 21,
+      "nombre": "Carlos",
+      "apellido": "López",
+      "usuario": "carlosl",
+      "email": "carlos@example.com",
+      "edad": 29,
+      "idiomas": ["español", "inglés"],
+      "pais": "Colombia",
+      "estado": "Bogotá",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 8.5,
+          "cantCalif": 32
+        },
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 9,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 7.5,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones móviles", "Diseño gráfico", "Fotografía"],
+      "password": "carlos123",
+      "imagen": ""
+    },
+    {
+      "id": 22,
+      "nombre": "Laura",
+      "apellido": "Martínez",
+      "usuario": "lauram",
+      "email": "laura@example.com",
+      "edad": 28,
+      "idiomas": ["español", "inglés"],
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Diseño UX/UI",
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario.",
+          "calificacion": 7.8,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Frontend development",
+          "descripcion": "Desarrollo de la parte visual de sitios web y aplicaciones utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8.5,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 8,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Diseño de interfaces", "Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos"],
+      "password": "laura123",
+      "imagen": ""
+    },
+    {
+      "id": 23,
+      "nombre": "Pedro",
+      "apellido": "Gómez",
+      "usuario": "pedrog",
+      "email": "pedro@example.com",
+      "edad": 27,
+      "idiomas": ["español", "inglés"],
+      "pais": "España",
+      "estado": "Valencia",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 8.7,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "pedro123",
+      "imagen": ""
+    },
+    {
+      "id": 24,
+      "nombre": "Ana",
+      "apellido": "Sánchez",
+      "usuario": "anas",
+      "email": "ana@example.com",
+      "edad": 31,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Ciudad de México",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 9,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 8,
+          "cantCalif": 20
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 7,
+          "cantCalif": 15
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones móviles", "Marketing digital", "Diseño UX/UI"],
+      "password": "ana123",
+      "imagen": ""
+    },
+    {
+      "id": 25,
+      "nombre": "Manuel",
+      "apellido": "Fernández",
+      "usuario": "manuelf",
+      "email": "manuel@example.com",
+      "edad": 32,
+      "idiomas": ["español", "inglés"],
+      "pais": "España",
+      "estado": "Barcelona",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "manuel123",
+      "imagen": ""
+    },
+    {
+      "id": 26,
+      "nombre": "Cristina",
+      "apellido": "Díaz",
+      "usuario": "cristinad",
+      "email": "cristina@example.com",
+      "edad": 29,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Guadalajara",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "calificacion": 8.5,
+          "cantCalif": 32
+        },
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 9,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 7.5,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones móviles", "Diseño gráfico", "Fotografía"],
+      "password": "cristina123",
+      "imagen": ""
+    },
+    {
+      "id": 27,
+      "nombre": "Javier",
+      "apellido": "Rodríguez",
+      "usuario": "javierr",
+      "email": "javier@example.com",
+      "edad": 27,
+      "idiomas": ["español", "inglés"],
+      "pais": "Argentina",
+      "estado": "Buenos Aires",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Diseño UX/UI",
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario.",
+          "calificacion": 7.8,
+          "cantCalif": 28
+        },
+        {
+          "nombre": "Frontend development",
+          "descripcion": "Desarrollo de la parte visual de sitios web y aplicaciones utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8.5,
+          "cantCalif": 25
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla.",
+          "calificacion": 8,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Diseño de interfaces", "Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos"],
+      "password": "javier123",
+      "imagen": ""
+    },
+    {
+      "id": 28,
+      "nombre": "Sofía",
+      "apellido": "López",
+      "usuario": "sofial",
+      "email": "sofia@example.com",
+      "edad": 26,
+      "idiomas": ["español", "inglés"],
+      "pais": "Colombia",
+      "estado": "Medellín",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc.",
+          "calificacion": 8.7,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "sofia123",
+      "imagen": ""
+    },
+    {
+      "id": 29,
+      "nombre": "Daniel",
+      "apellido": "Martínez",
+      "usuario": "danielm",
+      "email": "daniel@example.com",
+      "edad": 28,
+      "idiomas": ["español", "inglés"],
+      "pais": "España",
+      "estado": "Madrid",
+      "grado": "Licenciatura",
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc.",
+          "calificacion": 8,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "daniel123",
+      "imagen": ""
+    },
+    {
+      "id": 30,
+      "nombre": "Marta",
+      "apellido": "García",
+      "usuario": "martag",
+      "email": "marta@example.com",
+      "edad": 27,
+      "idiomas": ["español", "inglés"],
+      "pais": "México",
+      "estado": "Ciudad de México",
+      "grado": "Maestría",
+      "habilidades": [
+        {
+          "nombre": "Diseño UX/UI",
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario.",
+          "calificacion": 8,
+          "cantCalif": 30
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc.",
+          "calificacion": 9.5,
+          "cantCalif": 40
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "calificacion": 10,
+          "cantCalif": 20
+        }
+      ],
+      "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
+      "password": "marta123",
+      "imagen": ""
     }
   ]
 }

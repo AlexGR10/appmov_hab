@@ -19,7 +19,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int id_receive = 0;
+  int id_receive = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         '/interest_user_page': (context) =>
             InterestsUserPage(userId: id_receive),
       },
-      initialRoute: '/welcome',
+      initialRoute: '/bottomNavigator',
     );
   }
 }

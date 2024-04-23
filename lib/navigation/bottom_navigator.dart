@@ -56,7 +56,7 @@ class NavBar extends State<BottomNavigator> {
   Widget _buildBody(int index) {
     switch (index) {
       case 0:
-        return const HomePage();
+        return HomePage(userId: widget.id_receive);
       case 1:
         return const MessagesPage();
       default:
