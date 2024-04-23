@@ -34,8 +34,8 @@ Este proyecto es una aplicación móvil desarrollada en Flutter destinada a gest
 Las contribuciones son bienvenidas. Si tienes alguna idea para mejorar este proyecto, siéntete libre de abrir un problema o enviar una solicitud de extracción.
 
 ## Autores
--José Alejandro Gutiérrez Rodríguez
--Marco Antonio Reyes Rodríguez
+- José Alejandro Gutiérrez Rodríguez
+- Marco Antonio Reyes Rodríguez
 
 ## Licencia
 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
