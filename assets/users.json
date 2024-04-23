@@ -11,7 +11,12 @@
       "pais": "Null",
       "estado": "Null",
       "grado": "Null",
-      "habilidades": ["Null"],
+      "habilidades": [
+        {
+          "nombre": "Null",
+          "descripcion": "Null"
+        }
+      ],
       "intereses": ["Null"],
       "password": "Null"
     },
@@ -26,7 +31,20 @@
       "pais": "México",
       "estado": "Ciudad de México",
       "grado": "Licenciatura",
-      "habilidades": ["Programación", "Diseño gráfico", "Inglés"],
+      "habilidades": [
+        {
+          "nombre": "Programación",
+          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc."
+        },
+        {
+          "nombre": "Diseño gráfico",
+          "descripcion": "Creación de elementos visuales utilizando herramientas de diseño como Adobe Photoshop, Illustrator, etc."
+        },
+        {
+          "nombre": "Inglés",
+          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla."
+        }
+      ],
       "intereses": ["Desarrollo de aplicaciones web", "Marketing digital", "Diseño UX/UI"],
       "password": "juan123"
     },
@@ -41,7 +59,20 @@
       "pais": "España",
       "estado": "Madrid",
       "grado": "Maestría",
-      "habilidades": ["Marketing digital", "Redacción", "Francés"],
+      "habilidades": [
+        {
+          "nombre": "Marketing digital",
+          "descripcion": "Planificación y ejecución de estrategias de marketing en línea para promover productos o servicios."
+        },
+        {
+          "nombre": "Redacción",
+          "descripcion": "Creación de contenido escrito para diversos fines, como blogs, sitios web, redes sociales, etc."
+        },
+        {
+          "nombre": "Francés",
+          "descripcion": "Competencia en el idioma francés, tanto en la escritura como en el habla."
+        }
+      ],
       "intereses": ["Desarrollo de aplicaciones móviles", "Diseño gráfico", "Fotografía"],
       "password": "maria123"
     },
@@ -56,7 +87,20 @@
       "pais": "Estados Unidos",
       "estado": "California",
       "grado": "Bachillerato",
-      "habilidades": ["Desarrollo web", "Gestión de proyectos", "Español"],
+      "habilidades": [
+        {
+          "nombre": "Desarrollo web",
+          "descripcion": "Creación de sitios web utilizando tecnologías como HTML, CSS, JavaScript, etc."
+        },
+        {
+          "nombre": "Gestión de proyectos",
+          "descripcion": "Planificación, ejecución y control de proyectos para lograr objetivos específicos."
+        },
+        {
+          "nombre": "Español",
+          "descripcion": "Competencia en el idioma español, tanto en la escritura como en el habla."
+        }
+      ],
       "intereses": ["Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos", "Inteligencia artificial"],
       "password": "john123"
     },
@@ -71,7 +115,20 @@
       "pais": "Argentina",
       "estado": "Buenos Aires",
       "grado": "Licenciatura",
-      "habilidades": ["Diseño UX/UI", "Frontend development", "Portugués"],
+      "habilidades": [
+        {
+          "nombre": "Diseño UX/UI",
+          "descripcion": "Diseño de interfaces de usuario centradas en la usabilidad y la experiencia del usuario."
+        },
+        {
+          "nombre": "Frontend development",
+          "descripcion": "Desarrollo de la parte visual de sitios web y aplicaciones utilizando tecnologías como HTML, CSS, JavaScript, etc."
+        },
+        {
+          "nombre": "Portugués",
+          "descripcion": "Competencia en el idioma portugués, tanto en la escritura como en el habla."
+        }
+      ],
       "intereses": ["Diseño de interfaces", "Desarrollo de aplicaciones móviles", "Desarrollo de videojuegos"],
       "password": "luisa123"
     },
@@ -86,7 +143,20 @@
       "pais": "Reino Unido",
       "estado": "Londres",
       "grado": "Licenciatura",
-      "habilidades": ["Redes sociales", "Fotografía", "Alemán"],
+      "habilidades": [
+        {
+          "nombre": "Redes sociales",
+          "descripcion": "Gestión de perfiles en redes sociales y creación de estrategias de contenido para aumentar la visibilidad y la participación."
+        },
+        {
+          "nombre": "Fotografía",
+          "descripcion": "Captura de imágenes utilizando cámaras fotográficas profesionales y técnicas avanzadas de edición de imágenes."
+        },
+        {
+          "nombre": "Alemán",
+          "descripcion": "Competencia en el idioma alemán, tanto en la escritura como en el habla."
+        }
+      ],
       "intereses": ["Desarrollo web", "Marketing digital", "Desarrollo de aplicaciones móviles"],
       "password": "emily123"
     }

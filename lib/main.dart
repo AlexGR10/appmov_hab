@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:proyect_example/screens/login_page.dart';
-import 'package:proyect_example/widgets/create_account_page.dart';
+import 'package:proyect_example/widgets/Login/create_account_page.dart';
 import 'package:proyect_example/navigation/bottom_navigator.dart';
+import 'screens/profile/config_user_page.dart';
+import 'screens/profile/skills.dart';
+import 'screens/profile/interest.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,6 +42,10 @@ class _MyAppState extends State<MyApp> {
         '/bottomNavigator': (context) =>
             BottomNavigator(id_receive: id_receive),
         '/welcome': (context) => const WelcomePage(),
+        '/config_user_page': (context) => ConfigUserPage(userId: id_receive),
+        '/skills_user_page': (context) => SkillsUserPage(userId: id_receive),
+        '/interest_user_page': (context) =>
+            InterestsUserPage(userId: id_receive),
       },
       initialRoute: '/welcome',
     );

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../widgets/create_account_page.dart';
-import '../widgets/forgot_password_page.dart';
+import '../widgets/Login/create_account_page.dart';
+import '../widgets/Login/forgot_password_page.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function(int)

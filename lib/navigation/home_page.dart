@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:proyect_example/screens/users_details.dart';
+import 'package:proyect_example/screens/home/users_details.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

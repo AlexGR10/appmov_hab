@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../widgets/config_user/config_user_CuadrosText.dart';
+import '../../widgets/ProfileUser/config_user/config_user_CuadrosText.dart';
 
 class ConfigUserPage extends StatefulWidget {
-  final int userId; // Agregamos el campo userId
+  final int userId;
 
   const ConfigUserPage({Key? key, required this.userId}) : super(key: key);
 
@@ -40,35 +40,30 @@ class _ConfigUserPageState extends State<ConfigUserPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          "Edita tu información",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 236, 135, 19),
+          ),
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color.fromARGB(255, 236, 135, 19),
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 236, 135, 19), // Fondo naranja
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color.fromARGB(255, 236, 135, 19),
-                    width: .8,
-                  ),
-                ),
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Configuración",
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white, // Letras blancas
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
@@ -86,41 +81,49 @@ class _ConfigUserPageState extends State<ConfigUserPage> {
                                   label: 'Nombre',
                                   defaultText: _userData['nombre'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Apellido',
                                   defaultText: _userData['apellido'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Usuario',
                                   defaultText: _userData['usuario'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Email',
                                   defaultText: _userData['email'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Contraseña',
                                   defaultText: _userData['password'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Idioma',
                                   defaultText: _userData['idioma'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'País',
                                   defaultText: _userData['pais'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Estado',
                                   defaultText: _userData['estado'] ?? '',
                                 ),
+                                SizedBox(height: 8), // Espacio entre widgets
                                 UserAttributeEditField(
                                   id: widget.userId,
                                   label: 'Grado',

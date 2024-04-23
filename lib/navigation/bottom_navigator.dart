@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyect_example/navigation/home_page.dart';
 import 'package:proyect_example/navigation/messages_page.dart';
-import 'package:proyect_example/navigation/ProfileUserPage.dart';
+import 'package:proyect_example/navigation/profile_user_page.dart';
 
 class BottomNavigator extends StatefulWidget {
   final int id_receive;
@@ -13,7 +13,7 @@ class BottomNavigator extends StatefulWidget {
 }
 
 class NavBar extends State<BottomNavigator> {
-  int currentPageIndex = 2;
+  int currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,10 @@ class NavBar extends State<BottomNavigator> {
           ),
           NavigationDestination(
             icon: Icon(
-              Icons.settings,
+              Icons.person,
               size: 30.0,
             ),
-            label: 'Configuracion',
+            label: 'Perfil',
           )
         ],
       ),

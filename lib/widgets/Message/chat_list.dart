@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyect_example/screens/chat_page.dart';
+import 'package:proyect_example/screens/message/chat_page.dart';
 
 
 class ChatList extends StatefulWidget {

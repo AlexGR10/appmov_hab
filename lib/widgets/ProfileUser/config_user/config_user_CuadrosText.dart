@@ -35,7 +35,7 @@ class _UserAttributeEditFieldState extends State<UserAttributeEditField> {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Colors.grey, // Color del borde inferior
+            color: Colors.grey[300]!, // Color del borde inferior
             width: 1.0, // Grosor del borde inferior
           ),
         ),
@@ -45,18 +45,22 @@ class _UserAttributeEditFieldState extends State<UserAttributeEditField> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '${widget.label}: ',
-                style: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: Text(
+                  '${widget.label}: ',
+                  style: const TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black, // Letras negras
+                  ),
                 ),
               ),
-              const SizedBox(height: 5), // Espacio adicional
               Text(
                 _currentText,
                 style: const TextStyle(
                   fontSize: 20,
+                  color: Colors.black, // Letras negras
                 ),
               ),
             ],
@@ -68,6 +72,7 @@ class _UserAttributeEditFieldState extends State<UserAttributeEditField> {
                   ? TextField(
                       controller: _textEditingController,
                       decoration: InputDecoration(
+                        border: InputBorder.none, // Sin borde
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -77,7 +82,7 @@ class _UserAttributeEditFieldState extends State<UserAttributeEditField> {
                           },
                           icon: const Icon(
                             Icons.check,
-                            color: Color.fromARGB(255, 236, 135, 19),
+                            color: Colors.black, // Icono de guardar negro
                           ),
                         ),
                       ),
@@ -88,13 +93,9 @@ class _UserAttributeEditFieldState extends State<UserAttributeEditField> {
                           _isEditing = true;
                         });
                       },
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.edit,
-                            color: Color.fromARGB(255, 236, 135, 19),
-                          ),
-                        ],
+                      child: const Icon(
+                        Icons.edit,
+                        color: Colors.black, // Icono de lápiz negro
                       ),
                     ),
             ),

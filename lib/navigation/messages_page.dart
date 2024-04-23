@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:proyect_example/widgets/chat_list.dart';
+import 'package:proyect_example/widgets/Message/chat_list.dart';
 
 class MessagesPage extends StatefulWidget {
   const MessagesPage({super.key});
