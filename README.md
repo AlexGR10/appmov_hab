@@ -20,7 +20,7 @@ Este proyecto es una aplicación móvil desarrollada en Flutter destinada a gest
 
 1. Clona este repositorio en tu máquina local.
 
-   git clone https://github.com/tu_usuario/proyecto-gestor-habilidades.git
+   git clone [https://github.com/tu_usuario/proyecto-gestor-habilidades.git](https://github.com/AlexGR10/appmov_hab/blob/main/README.md)
 
 2. Navega al directorio del proyecto.
    
