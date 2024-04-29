@@ -7,11 +7,13 @@ import 'package:proyect_example/widgets/Home/little_avatar.dart';
 class CategoryInterestUser extends StatefulWidget {
   final String interest;
   final int userId;
+  final int maxUsersToShow;
 
   const CategoryInterestUser({
     Key? key,
     required this.interest,
     required this.userId,
+    this.maxUsersToShow = 6,
   }) : super(key: key);
 
   @override
@@ -20,6 +22,7 @@ class CategoryInterestUser extends StatefulWidget {
 
 class _CategoryInterestUserState extends State<CategoryInterestUser> {
   List<Map<String, dynamic>> _users = [];
+  int _displayedUsersCount = 0;
 
   @override
   void initState() {
@@ -35,10 +38,45 @@ class _CategoryInterestUserState extends State<CategoryInterestUser> {
         _users = List<Map<String, dynamic>>.from(data.where((user) =>
             user['habilidades']
                 .any((habilidad) => habilidad['nombre'] == widget.interest)));
+
+        // Agregar calificación y cantidad de veces al usuario
+        _users.forEach((user) {
+          final habilidad = user['habilidades'].firstWhere(
+              (habilidad) => habilidad['nombre'] == widget.interest);
+          user['calificacion'] = habilidad['calificacion'] as double?;
+          user['cantCalif'] = habilidad['cantCalif'] as int?;
+        });
+
+        // Ordenar usuarios por calificación y cantidad de veces
+        _users.sort((a, b) {
+          final double aCalif = a['calificacion'] ?? 0;
+          final double bCalif = b['calificacion'] ?? 0;
+          final int aCant = a['cantCalif'] ?? 0;
+          final int bCant = b['cantCalif'] ?? 0;
+
+          if (aCalif == bCalif) {
+            return bCant.compareTo(aCant);
+          } else {
+            return bCalif.compareTo(aCalif);
+          }
+        });
+
+        _displayedUsersCount = _users.length > widget.maxUsersToShow
+            ? widget.maxUsersToShow
+            : _users.length;
       });
     } catch (e) {
       print('Error loading users: $e');
     }
+  }
+
+  void showMoreUsers() {
+    setState(() {
+      _displayedUsersCount += widget.maxUsersToShow;
+      if (_displayedUsersCount > _users.length) {
+        _displayedUsersCount = _users.length;
+      }
+    });
   }
 
   @override
@@ -60,45 +98,52 @@ class _CategoryInterestUserState extends State<CategoryInterestUser> {
                 color: Colors.orange,
               ),
               const SizedBox(width: 12),
-              Text(
-                'Te puede interesar ${widget.interest}:',
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+              Flexible(
+                child: Text(
+                  'Te puede interesar ${widget.interest}:',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 12),
-          Column(
-            children: _users.map((user) {
-              final habilidades = user['habilidades'] as List<dynamic>;
-              final habilidad = habilidades.firstWhere(
-                  (habilidad) => habilidad['nombre'] == widget.interest,
-                  orElse: () => null);
-              if (habilidad != null) {
-                final calificacion = habilidad['calificacion'] as double?;
-                final cantCalif = habilidad['cantCalif'] as int?;
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  child: LittleAvatar(
-                    backgroundColor: Colors.grey,
-                    icon: Icons.person,
-                    iconColor: Colors.white,
-                    size: 40.0,
-                    id: user['id'].toString(),
-                    nombre: user['nombre'],
-                    habilidad: widget.interest,
-                    calificacion: calificacion,
-                    cantCalif: cantCalif,
+          _users.isEmpty
+              ? Text(
+                  'Aún no hay nadie con esta habilidad',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey[600],
                   ),
-                );
-              } else {
-                return SizedBox(); // No se encontró la habilidad, retornar widget vacío
-              }
-            }).toList(),
-          ),
+                )
+              : Wrap(
+                  spacing: 8.0, // Espacio horizontal entre los avatares
+                  runSpacing:
+                      8.0, // Espacio vertical entre las filas de avatares
+                  children: _users.take(_displayedUsersCount).map((user) {
+                    final calificacion = user['calificacion'] as double?;
+                    final cantCalif = user['cantCalif'] as int?;
+                    return LittleAvatar(
+                      backgroundColor: Colors.white,
+                      icon: Icons.person,
+                      iconColor: Colors.orange,
+                      size: 40.0,
+                      id: user['id'].toString(),
+                      nombre: user['nombre'],
+                      habilidad: widget.interest,
+                      calificacion: calificacion,
+                      cantCalif: cantCalif,
+                    );
+                  }).toList(),
+                ),
+          if (_users.length > _displayedUsersCount)
+            ElevatedButton(
+              onPressed: showMoreUsers,
+              child: const Text('Ver más'),
+            ),
         ],
       ),
     );

@@ -36,8 +36,8 @@
       "grado": "Licenciatura",
       "habilidades": [
         {
-          "nombre": "Programación",
-          "descripcion": "Desarrollo de aplicaciones de software utilizando varios lenguajes de programación como Java, Python, etc.",
+          "nombre": "Desarrollo de aplicaciones móviles",
+          "descripcion": "Desarrollo de aplicaciones de aplicaciones moviles utilizando varios lenguajes de programación como Java, Python, etc.",
           "calificacion": 10,
           "cantCalif": 3
         },
@@ -48,8 +48,8 @@
           "cantCalif": 20
         },
         {
-          "nombre": "Inglés",
-          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "nombre": "Fotografía",
+          "descripcion": "No pues tengo iPhone.",
           "calificacion": 7,
           "cantCalif": 10
         }
@@ -223,8 +223,8 @@
           "cantCalif": 25
         },
         {
-          "nombre": "Inglés",
-          "descripcion": "Fluidez en el idioma inglés, tanto en la escritura como en el habla.",
+          "nombre": "Diseño de interfaces",
+          "descripcion": "Fluidez en UI como experto.",
           "calificacion": 7,
           "cantCalif": 12
         }
@@ -503,7 +503,7 @@
           "cantCalif": 30
         },
         {
-          "nombre": "Portugués",
+          "nombre": "Desarrollo de aplicaciones móviles",
           "descripcion": "Competencia en el idioma portugués, tanto en la escritura como en el habla.",
           "calificacion": 8.5,
           "cantCalif": 25

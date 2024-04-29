@@ -16,7 +16,7 @@ class InterestsUserCuadro extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Color.fromARGB(29, 236, 135, 19),
+        color: Colors.grey[200],
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
