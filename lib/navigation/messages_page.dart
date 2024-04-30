@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:proyect_example/screens/message/chat_solicitud.dart';
 import 'package:proyect_example/widgets/Message/chat_list.dart';
 
 class MessagesPage extends StatefulWidget {
@@ -12,8 +13,8 @@ class MessagesPage extends StatefulWidget {
 }
 
 class _MessagePageState extends State<MessagesPage> {
-
-  List _items = [];
+  List<ChatModel> _items = [];
+  int _selectedItemIndex = -1;
 
   @override
   void initState() {
@@ -25,21 +26,19 @@ class _MessagePageState extends State<MessagesPage> {
     final String response = await rootBundle.loadString('assets/messages.json');
     final List<dynamic> data = json.decode(response)["items"];
 
-  setState(() {
+    setState(() {
       _items = data
-          .map((item) => (
+          .map((item) => ChatModel(
                 user: item["user"],
                 image: item["image"],
                 message: item["message"],
                 time: item["time"],
-                isMessageRead: true, 
+                isMessageRead: true,
               ))
           .toList();
     });
   }
 
-
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +54,7 @@ class _MessagePageState extends State<MessagesPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     const Text(
-                      "Conversations",
+                      "Mensajes",
                       style:
                           TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                     ),
@@ -78,7 +77,7 @@ class _MessagePageState extends State<MessagesPage> {
                             width: 2,
                           ),
                           Text(
-                            "Add New",
+                            "Nuevo",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
                           ),
@@ -88,6 +87,83 @@ class _MessagePageState extends State<MessagesPage> {
                   ],
                 ),
               ),
+            ),
+            const SafeArea(
+                child: Padding(
+                    padding: EdgeInsets.only(left: 16, right: 16, top: 5),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            "Solicitudes",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ]))),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.only(top: 15),
+                    height: 150,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: _items.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              if (_selectedItemIndex == index) {
+                                _selectedItemIndex =
+                                    -1; // Deseleccionar el elemento si ya está seleccionado
+                              } else {
+                                _selectedItemIndex = index;
+                              }
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ChatSolicitud(
+                                      userName: _items[index].user),
+                                ),
+                              );
+                            });
+                          },
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: _selectedItemIndex == index
+                                          ? Colors.grey
+                                          : Colors.orange,
+                                      width: 3,
+                                    ),
+                                  ),
+                                  child: CircleAvatar(
+                                    radius: 45,
+                                    backgroundImage:
+                                        NetworkImage(_items[index].image),
+                                  ),
+                                ),
+                                Text(
+                                  _items[index].user,
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
@@ -129,4 +205,20 @@ class _MessagePageState extends State<MessagesPage> {
       ),
     );
   }
+}
+
+class ChatModel {
+  final String user;
+  final String image;
+  final String message;
+  final String time;
+  final bool isMessageRead;
+
+  ChatModel({
+    required this.user,
+    required this.image,
+    required this.message,
+    required this.time,
+    required this.isMessageRead,
+  });
 }
