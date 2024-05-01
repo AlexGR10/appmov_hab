@@ -19,7 +19,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int id_receive = 18;
+  int id_receive = 1;
 
   @override
   Widget build(BuildContext context) {

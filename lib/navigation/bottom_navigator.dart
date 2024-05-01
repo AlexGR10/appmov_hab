@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:proyect_example/navigation/home_page.dart';
 import 'package:proyect_example/navigation/messages_page.dart';
 import 'package:proyect_example/navigation/profile_user_page.dart';
+import 'package:proyect_example/screens/profile/new_config_user.dart';
 
 class BottomNavigator extends StatefulWidget {
   final int id_receive;
 
-  const BottomNavigator({Key? key, required this.id_receive}) : super(key: key);
+  const BottomNavigator({super.key, required this.id_receive});
 
   @override
   State<BottomNavigator> createState() => NavBar();
@@ -60,7 +61,7 @@ class NavBar extends State<BottomNavigator> {
       case 1:
         return const MessagesPage();
       default:
-        return ProfileUserPage(userId: widget.id_receive);
+        return NewConfig(userId: widget.id_receive);
     }
   }
 }

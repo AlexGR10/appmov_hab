@@ -11,7 +11,6 @@ class ChatSolicitud extends StatefulWidget {
 }
 
 class _ChatSolicitudState extends State<ChatSolicitud> {
-  final TextEditingController _messageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

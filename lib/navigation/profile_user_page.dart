@@ -5,7 +5,7 @@ import '../widgets/ProfileUser/log_out/log_out.dart';
 class ProfileUserPage extends StatelessWidget {
   final int userId;
 
-  const ProfileUserPage({Key? key, required this.userId}) : super(key: key);
+  const ProfileUserPage({super.key, required this.userId});
 
   @override
   Widget build(BuildContext context) {
