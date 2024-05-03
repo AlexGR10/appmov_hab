@@ -1,12 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
-
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
 import 'package:xml/xml.dart' as xml;
 import '/widgets/ProfileUser/log_out/log_out.dart';
-
 
 class NewConfig extends StatelessWidget {
   final int userId;
