@@ -13,7 +13,7 @@ class ConfigUserPage extends StatefulWidget {
 }
 
 class _ConfigUserPageState extends State<ConfigUserPage> {
-  late Map<String, dynamic> _userData;
+  late Map<String, dynamic> _userData ={};
 
   @override
   void initState() {

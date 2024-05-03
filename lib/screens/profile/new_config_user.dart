@@ -4,9 +4,9 @@ import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
-import 'package:proyect_example/widgets/ProfileUser/ProfileUserSection.dart';
 import 'package:xml/xml.dart' as xml;
 import '/widgets/ProfileUser/log_out/log_out.dart';
+
 
 class NewConfig extends StatelessWidget {
   final int userId;
@@ -16,8 +16,10 @@ class NewConfig extends StatelessWidget {
     required this.userId,
   });
 
-  Future<Map<String, dynamic>> _loadUserData(String id) async {
-    final String response = await rootBundle.loadString('users.xml');
+
+// Modificar _loadUserData para cargar el contenido del archivo XML seleccionado
+ Future<Map<String, dynamic>> _loadUserData(String id) async {
+    final String response = await rootBundle.loadString('assets/users.xml');
     final document = xml.XmlDocument.parse(response);
     final users = document.findAllElements('user');
 
@@ -87,7 +89,6 @@ class NewConfig extends StatelessWidget {
         final userData = snapshot.data!;
         final nombre = '${userData['nombre']} ${userData['apellido']}';
         final usuario = '@${userData['usuario']}';
-        final idiomas = (userData['idiomas'] as List).join(', ');
         final habilidades = userData['habilidades'] as List<dynamic>;
         habilidades.sort((a, b) => a['nombre'].compareTo(b['nombre']));
         final intereses = (userData['intereses'] as List).join(', ');

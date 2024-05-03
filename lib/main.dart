@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         '/interest_user_page': (context) =>
             InterestsUserPage(userId: id_receive),
       },
-      initialRoute: '/bottomNavigator',
+      initialRoute: '/welcome',
     );
   }
 }
