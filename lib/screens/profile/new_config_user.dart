@@ -30,7 +30,6 @@ class _NewConfigState extends State<NewConfig> {
   }
 
   String? _selectedFilePath;
-  dynamic _xmlData;
 
   void _pickFile() async {
     final result = await FilePicker.platform.pickFiles(
@@ -41,13 +40,11 @@ class _NewConfigState extends State<NewConfig> {
     if (result != null) {
       final file = File(result.files.single.path!);
 
-      final String response = await file.readAsString();
-      final document = xml.XmlDocument.parse(response);
-
       setState(() {
         _selectedFilePath = file.path;
-        _xmlData = document; // Suponiendo que `_xmlData` es una variable donde deseas almacenar el documento XML.
       });
+
+      print('Ruta del archivo seleccionado: $_selectedFilePath');
 
       // Cargar y analizar el archivo XML seleccionado
       await _loadUserData(file.path);
@@ -55,12 +52,15 @@ class _NewConfigState extends State<NewConfig> {
   }
 
   Future<Map<String, dynamic>> _loadUserData(String id) async {
-    if (_xmlData == null) {
+    if (_selectedFilePath == null) {
       // Manejar el caso donde no se ha cargado el archivo XML
       return {};
     }
+    final File file = File(_selectedFilePath!);
+    final String response = await file.readAsString();
+    final document = xml.XmlDocument.parse(response);
 
-    final users = _xmlData.findAllElements('user');
+    final users = document.findAllElements('user');
 
     for (final user in users) {
       final userId = user.findElements('id').single.text;
