@@ -177,18 +177,7 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 _pickJsonFileAndFillFields();
               },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                  const Color.fromARGB(255, 236, 135, 19),
-                ),
-              ),
-              child: const Text(
-                'Cargar datos del usuario 1 desde JSON',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
-                ),
-              ),
+              child: Text("Seleccionar archivo"),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
