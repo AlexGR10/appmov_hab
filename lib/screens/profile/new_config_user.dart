@@ -31,36 +31,38 @@ class _NewConfigState extends State<NewConfig> {
 
   String? _selectedFilePath;
 
-  void _pickFile() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['xml'],
-    );
+void _pickFile() async {
+  final result = await FilePicker.platform.pickFiles(
+    type: FileType.custom,
+    allowedExtensions: ['xml'],
+  );
 
-    if (result != null) {
-      final file = File(result.files.single.path!);
+  if (result != null) {
+    setState(() {
+      _selectedFilePath =
+          result.files.single.path ?? result.files.single.name;
+    });
 
-      setState(() {
-        _selectedFilePath = file.path;
-      });
+    print('Ruta del archivo seleccionado: $_selectedFilePath');
 
-      print('Ruta del archivo seleccionado: $_selectedFilePath');
-
-      // Cargar y analizar el archivo XML seleccionado
-      await _loadUserData(file.path);
-    }
+    // Llama a _userDataFuture para activar la carga de datos del usuario después de seleccionar el archivo
+    setState(() {
+      _userDataFuture = _loadUserData(widget.userId.toString());
+    });
   }
+}
 
   Future<Map<String, dynamic>> _loadUserData(String id) async {
-    if (_selectedFilePath == null) {
-      // Manejar el caso donde no se ha cargado el archivo XML
-      return {};
-    }
+   if (_selectedFilePath == null) {
+    print('No se ha seleccionado ningún archivo');
+    return {};
+  }
     final File file = File(_selectedFilePath!);
     final String response = await file.readAsString();
     final document = xml.XmlDocument.parse(response);
 
     final users = document.findAllElements('user');
+
 
     for (final user in users) {
       final userId = user.findElements('id').single.text;
@@ -107,6 +109,8 @@ class _NewConfigState extends State<NewConfig> {
         userData['imagen'] = base64String;
 
         return userData;
+
+
       }
     }
 
