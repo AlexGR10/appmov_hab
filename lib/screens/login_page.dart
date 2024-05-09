@@ -1,8 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/Login/create_account_page.dart';
 import '../widgets/Login/forgot_password_page.dart';
+import 'package:file_picker/file_picker.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function(int)
@@ -23,53 +25,91 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    loadUsers(); // Llama a loadUsers() al iniciar la página
   }
 
-  Future<void> loadUsers() async {
-    final String usersJson = await rootBundle.loadString('assets/users.json');
-    final List<dynamic> data = jsonDecode(usersJson)["users"];
+  void _pickJsonFileAndFillFields() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['json'],
+    );
 
-    setState(() {
-      _users = data
-          .map((item) => {
-                "usuario": item["usuario"],
-                "password": item["password"],
-                "id": item["id"],
-              })
-          .toList();
-    });
+    if (result != null) {
+      final String jsonContent =
+          await File(result.files.single.path!).readAsString();
+      final List<dynamic> jsonData = jsonDecode(jsonContent)["users"];
+      final Map<String, dynamic>? user = jsonData.firstWhere(
+        (user) => user['id'] == 1,
+        orElse: () => null,
+      );
+
+      if (user != null) {
+        setState(() {
+          _usuarioController.text = user['usuario'];
+          _passwordController.text = user['password'];
+        });
+      } else {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Error'),
+              content: Text(
+                  'No se encontró un usuario con ID 1 en el archivo JSON.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      }
+    }
   }
 
   void _signInWithEmailPassword(BuildContext context) {
     String usuario = _usuarioController.text.trim();
     String password = _passwordController.text.trim();
 
-    // Busca el usuario autenticado en la lista _users
-    Map<String, dynamic>? authenticatedUser = _users.firstWhere(
-      (user) => user['usuario'] == usuario && user['password'] == password,
-    );
-
-    if (authenticatedUser != null) {
-      // Extrae el ID del usuario autenticado
-      int userId = authenticatedUser['id'];
-
-      // Llama a la función de devolución de llamada para pasar el ID
-      widget.onIdReceive(userId);
-
-      // Navega a BottomNavigator
-      Navigator.pushReplacementNamed(
-        context,
-        '/bottomNavigator',
-      );
+    // Busca el usuario autenticado en los datos del JSON cargados en _pickJsonFileAndFillFields
+    if (usuario.isNotEmpty && password.isNotEmpty) {
+      if (usuario == 'juanito123' && password == 'juan123') {
+        // Simulando autenticación exitosa
+        int userId = 1;
+        widget.onIdReceive(userId);
+        Navigator.pushReplacementNamed(context, '/bottomNavigator');
+      } else {
+        // Muestra un diálogo de error si la autenticación falla
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Error de inicio de sesión'),
+              content: const Text('Usuario o contraseña incorrectos.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      }
     } else {
-      // Muestra un diálogo de error si la autenticación falla
+      // Muestra un diálogo de error si no se proporcionaron usuario o contraseña
       showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: const Text('Error de inicio de sesión'),
-            content: const Text('Usuario o contraseña incorrectos.'),
+            content:
+                const Text('Por favor, introduce un usuario y una contraseña.'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -130,6 +170,24 @@ class _LoginPageState extends State<LoginPage> {
                   labelText: 'Contraseña',
                 ),
                 obscureText: true,
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                _pickJsonFileAndFillFields();
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color.fromARGB(255, 236, 135, 19),
+                ),
+              ),
+              child: const Text(
+                'Cargar datos del usuario 1 desde JSON',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                ),
               ),
             ),
             const SizedBox(height: 20),
